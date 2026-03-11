@@ -9,21 +9,32 @@
 - `median-coffee` — медианная сумма трат на кофе по каждому студенту за весь период.
 
 ## Пример запуска
+
+uv run python main.py --files data/math.csv data/physics.csv data/programming.csv --report median-coffee
+
+Если окружение уже активировано, можно запустить так:
+
 python main.py --files data/math.csv data/physics.csv data/programming.csv --report median-coffee
 
 
 Скрипт объединяет данные из всех файлов, считает медиану трат на кофе по каждому студенту и выводит результат в консоль в виде таблицы.
 
 ## Структура проекта
-reports/ — реализация отчётов
-services/ — работа с данными (чтение CSV)
-tests/ — тесты
-main.py — точка входа CLI
+
+- reports/ — реализация отчётов
+- services/ — работа с данными (чтение CSV)
+- tests/ — тесты
+- main.py — точка входа CLI
 
 
 ## Тесты
 
 Запуск тестов:
 
-
 uv run pytest
+
+
+
+## Пример работы
+
+![Пример запуска](docs/example_run.png)
