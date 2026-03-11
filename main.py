@@ -29,7 +29,9 @@ def parse_args():
 def main():
     args = parse_args()
 
-    if args.report not in REPORTS:
+    report_class = REPORTS.get(args.report)
+
+    if report_class is None:
         print(f"Unknown report: {args.report}")
         sys.exit(1)
 
@@ -39,7 +41,6 @@ def main():
         print(e)
         sys.exit(1)
 
-    report_class = REPORTS[args.report]
     report = report_class()
 
     data = report.build(rows)
